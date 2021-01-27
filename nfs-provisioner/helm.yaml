@@ -52,6 +52,9 @@ rules:
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["create", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["endpoints"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]    
 ---
 # Source: nfs-subdir-external-provisioner/templates/clusterrolebinding.yaml
 kind: ClusterRoleBinding

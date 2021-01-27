@@ -9,6 +9,7 @@ metadata:
     chart: nfs-subdir-external-provisioner-3.0.0
     heritage: Helm
     release: nfs-subdir-external-provisioner
+  namespace: nfs
 spec:
   replicas: 1
   strategy:

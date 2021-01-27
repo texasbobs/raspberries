@@ -149,9 +149,9 @@ spec:
             - name: NFS_SERVER
               value: 192.168.2.3
             - name: NFS_PATH
-              value: /k3s
+              value: /mnt/zNAS/k3s
       volumes:
         - name: nfs-subdir-external-provisioner-root
           nfs:
             server: 192.168.2.3
-            path: /k3s
+            path: /mnt/zNAS/k3s

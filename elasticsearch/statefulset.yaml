@@ -40,21 +40,11 @@ spec:
               fieldPath: metadata.namespace
       volumes:
       - name: elasticsearch-logging
-        emptyDir: {}
+        hostPath:
+          path: /nfs-export/elasticsearch    
       initContainers:
       - image: alpine:3.6
         command: ["/sbin/sysctl", "-w", "vm.max_map_count=262144"]
         name: elasticsearch-logging-init
         securityContext:
           privileged: true
-  volumeClaimTemplates:
-  - metadata:
-      name: elasticsearch-logging
-      labels:
-        k8s-app: elasticsearch-logging
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: nfs-client
-      resources:
-        requests:
-          storage: 10Gi          

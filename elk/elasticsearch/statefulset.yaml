@@ -51,7 +51,7 @@ spec:
   - metadata:
         name: elasticsearch-logging
         labels:
-          k8s-app: elasticsearch-logging
+          app: elasticsearch-logging
       spec:
         accessModes: [ "ReadWriteOnce" ]
         storageClassName: nfs-client

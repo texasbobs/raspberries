@@ -136,8 +136,8 @@ spec:
       serviceAccountName: nfs-subdir-external-provisioner
       containers:
         - name: nfs-subdir-external-provisioner
-          # image: "groundhog2k/nfs-subdir-external-provisioner:v3.2.0"
-          image:  gcr.io/k8s-staging-sig-storage/nfs-subdir-external-provisioner:canary
+          image: "groundhog2k/nfs-subdir-external-provisioner:v3.2.0"
+          # image:  gcr.io/k8s-staging-sig-storage/nfs-subdir-external-provisioner:canary
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - name: nfs-subdir-external-provisioner-root

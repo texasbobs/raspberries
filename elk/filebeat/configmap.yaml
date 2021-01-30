@@ -9,7 +9,7 @@ metadata:
 data:
   filebeat.yml: |-
     filebeat.config:
-      prospectors:
+      inputs:
         # Mounted `filebeat-prospectors` configmap:
         path: ${path.config}/prospectors.d/*.yml
         # Reload prospectors configs as they change:

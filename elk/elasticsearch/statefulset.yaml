@@ -40,7 +40,7 @@ spec:
               fieldPath: metadata.namespace
       volumes:
       - name: elasticsearch-logging
-        mountPath: /usr/share/elasticsearch/data
+          mountPath: /usr/share/elasticsearch/data
       initContainers:
       - image: alpine:3.6
         command: ["/sbin/sysctl", "-w", "vm.max_map_count=262144"]

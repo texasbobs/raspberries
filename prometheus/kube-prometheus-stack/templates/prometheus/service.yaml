@@ -1,0 +1,23 @@
+---
+# Source: kube-prometheus-stack/templates/prometheus/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-kube-prometheus-prometheus
+  namespace: default
+  labels:
+    app: kube-prometheus-stack-prometheus
+    self-monitor: "true"
+    
+    chart: kube-prometheus-stack-10.3.3
+    release: "prometheus"
+    heritage: "Helm"
+spec:
+  ports:
+  - name: web
+    port: 9090
+    targetPort: 9090
+  selector:
+    app: prometheus
+    prometheus: prometheus-kube-prometheus-prometheus
+  type: "ClusterIP"

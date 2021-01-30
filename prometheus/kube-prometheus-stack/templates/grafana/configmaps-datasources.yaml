@@ -1,0 +1,23 @@
+---
+# Source: kube-prometheus-stack/templates/grafana/configmaps-datasources.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-kube-prometheus-grafana-datasource
+  namespace: default
+  labels:
+    grafana_datasource: "1"
+    app: kube-prometheus-stack-grafana
+    
+    chart: kube-prometheus-stack-10.3.3
+    release: "prometheus"
+    heritage: "Helm"
+data:
+  datasource.yaml: |-
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prometheus-kube-prometheus-prometheus:9090/
+      access: proxy
+      isDefault: true

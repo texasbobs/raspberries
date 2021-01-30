@@ -1,0 +1,19 @@
+---
+# Source: kube-prometheus-stack/templates/alertmanager/psp-role.yaml
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: prometheus-kube-prometheus-alertmanager
+  namespace: default
+  labels:
+    app: kube-prometheus-stack-alertmanager
+    
+    chart: kube-prometheus-stack-10.3.3
+    release: "prometheus"
+    heritage: "Helm"
+rules:
+- apiGroups: ['policy']
+  resources: ['podsecuritypolicies']
+  verbs:     ['use']
+  resourceNames:
+  - prometheus-kube-prometheus-alertmanager

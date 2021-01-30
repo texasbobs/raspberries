@@ -1,0 +1,18 @@
+---
+# Source: kube-prometheus-stack/templates/prometheus/psp-clusterrole.yaml
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: prometheus-kube-prometheus-prometheus-psp
+  labels:
+    app: kube-prometheus-stack-prometheus
+    
+    chart: kube-prometheus-stack-10.3.3
+    release: "prometheus"
+    heritage: "Helm"
+rules:
+- apiGroups: ['policy']
+  resources: ['podsecuritypolicies']
+  verbs:     ['use']
+  resourceNames:
+  - prometheus-kube-prometheus-prometheus

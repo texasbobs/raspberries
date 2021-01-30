@@ -49,7 +49,7 @@ spec:
           privileged: true
   volumeClaimTemplates:
   - metadata:
-        name: data
+        name: elasticsearch-logging
         labels:
           k8s-app: elasticsearch-logging
       spec:

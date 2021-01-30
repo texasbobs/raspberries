@@ -21,8 +21,8 @@ spec:
     spec:
       serviceAccountName: elasticsearch-logging
       containers:
-      # - image: elasticsearch:6.8.4
-      - image: webhippie/elasticsearch:5.6
+      - image: wep4you/logstash:7.9.2
+      # - image: webhippie/elasticsearch:5.6
         name: elasticsearch-logging
         ports:
         - containerPort: 9200

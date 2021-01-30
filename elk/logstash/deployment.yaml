@@ -4,9 +4,13 @@ kind: Deployment
 metadata:
   name: logstash-deployment
   namespace: elk
+  labels:
+    app: logstash
 spec:
   replicas: 1
   selector:
+    matchLabels:
+      app: logstash 
   template:
     metadata:
       labels:

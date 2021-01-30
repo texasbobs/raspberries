@@ -6,11 +6,12 @@ metadata:
   labels:
     k8s-app: filebeat
 rules:
-- apiGroups: [""] # "" indicates the core API group
+- apiGroups:
+  - ""
   resources:
-  - namespaces
-  - pods
+  - "namespaces"
+  - "pods"
   verbs:
-  - get
-  - watch
-  - list
+  - "get"  
+  - "watch"
+  - "list"

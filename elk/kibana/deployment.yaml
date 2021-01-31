@@ -21,8 +21,8 @@ spec:
         # image: docker.elastic.co/kibana/kibana-oss:6.8.4
         image: jmb12686/kibana:v7.7.1
         # env:
-        #   - name: ELASTICSEARCH_URL
-        #     value: http://elasticsearch-logging:9200
+          - name: ELASTICSEARCH_URL
+            value: http://elasticsearch-logging:9200
         env:
         - name: CLUSTER_NAME
           value: elasticsearch-logging      

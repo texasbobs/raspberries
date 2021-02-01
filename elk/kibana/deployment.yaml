@@ -20,7 +20,7 @@ spec:
       - name: kibana-logging
         # image: docker.elastic.co/kibana/kibana-oss:6.8.4
         image: jmb12686/kibana:v7.7.1
-        # env:
+        env:
           - name: ELASTICSEARCH_URL
             value: http://elasticsearch-logging:9200
         env:

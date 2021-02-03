@@ -23,6 +23,8 @@ spec:
         env:
         - name: ELASTICSEARCH_URL
           value: http://elasticsearch-logging:9200
+        - name: ELASTICSEARCH_HOSTS
+          value: http://elasticsearch-logging:9200          
         - name: CLUSTER_NAME
           value: elasticsearch-logging      
         ports:
